@@ -61,9 +61,17 @@ public class StudentService {
 	}
 	return null;
 	}
-	//getByName
+	
 	public Student getByName(String name) {
 		return repo.findByName(name);
+	}
+    
+	public Student getByEmail(String email) {
+		return repo.findByEmail(email);
+	}
+	
+	public Student getByEmailAndYear(String email,String year) {
+		return repo.findByEmailAndYear(email, year);
 	}
 
 	

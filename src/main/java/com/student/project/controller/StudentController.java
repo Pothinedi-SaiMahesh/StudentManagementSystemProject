@@ -50,10 +50,17 @@ public class StudentController {
 	public void deleteById(@PathVariable Long id) {
 		studentService.deleteById(id);
 	}
-	@GetMapping("name/{name}")
-    public  Student findByName(@PathVariable String name) {
-    	return studentService.getByName(name);
-    }
-	
+	@GetMapping("/name/{name}")
+	public Student findByName(@PathVariable String name) {
+		return studentService.getByName(name);
+	}
+	@GetMapping("/email/{email}")
+	public Student getByName(String name) {
+		return studentService.getByName(name);
+	}
+	@GetMapping("/email/{email}/year/{year}")
+	public Student getByEmailAndYear(String email,String year) {
+		return studentService.getByEmailAndYear(email, year);
+	}
 
 }
