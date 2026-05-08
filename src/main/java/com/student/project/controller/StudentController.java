@@ -62,5 +62,8 @@ public class StudentController {
 	public Student getByEmailAndYear(String email,String year) {
 		return studentService.getByEmailAndYear(email, year);
 	}
-
+	@GetMapping("/course/{course}")
+    public Student getByCourse(String course) {
+		return studentService.getByCourse(course);
+	}
 }
