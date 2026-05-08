@@ -81,5 +81,7 @@ public class StudentService {
 	public List<Student> getByYear(String year) {
 		return repo.findByYear(year);
 	}
-
+    public Student getByNameAndEmail(String name,String email) {
+		return repo.findByNameAndEmail(name, email);
+	}
 }
