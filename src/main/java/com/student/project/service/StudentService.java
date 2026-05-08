@@ -73,6 +73,10 @@ public class StudentService {
 	public Student getByEmailAndYear(String email,String year) {
 		return repo.findByEmailAndYear(email, year);
 	}
+	
+	public Student getByCourse(String Course) {
+		return repo.findByCourse(Course);
+	}
 
 	
 
