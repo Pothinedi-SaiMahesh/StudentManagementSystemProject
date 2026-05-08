@@ -20,4 +20,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 	public List<Student> findByYear(String year);
 	//find by name and email
 	public Student findByNameAndEmail(String name,String email);
+	
+	//find by student by course and year
+	public List<Student> findByCourseAndYear(String course,String year);
 }
