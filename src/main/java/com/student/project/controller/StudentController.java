@@ -70,4 +70,8 @@ public class StudentController {
 	public List<Student> getByYear(@PathVariable String year) {
 		return studentService.getByYear(year);
 	}
+	@GetMapping("/name/{name}/email/{email}")
+	public Student getByNameAndEmail(@PathVariable String name,@PathVariable String email) {
+		return studentService.getByNameAndEmail(name, email);
+	}
 }

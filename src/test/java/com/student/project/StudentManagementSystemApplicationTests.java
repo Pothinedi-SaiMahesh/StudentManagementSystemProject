@@ -40,5 +40,18 @@ class StudentManagementSystemApplicationTests {
 	assertEquals(HttpStatus.OK.value(),response.getStatus());
 	}
 	
-    
+	//Testing find By name and email
+	
+	public void testFindByNameAndEmail() throws Exception{
+		
+		//1)create Request By Using Mocking
+		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get(
+				"/students/name/{name}/email/{email}","Rahul","rahul101@example.com");
+		//2)Execute Request By Using Mocking
+		MvcResult result = mockMvc.perform(request).andReturn();
+		//3)Read Response from the result
+		MockHttpServletResponse response = result.getResponse();
+		//4)Assert Results Using JUnit
+		assertEquals(HttpStatus.OK.value(),response.getStatus());
+	}
 }
