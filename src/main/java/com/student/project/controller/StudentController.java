@@ -24,9 +24,9 @@ public class StudentController {
 	private StudentService studentService;
 	
 	//PostMapping logic
-	@PostMapping("/save")
-	public Student saveStudent(@RequestBody Student student) {
-		return studentService.save(student);
+	@PostMapping("/saveall")
+	public List<Student> saveStudent(@RequestBody List<Student> student) {
+		return studentService.saveallstudnets(student);
 	}
 	//GetById
 	@GetMapping("/{id}")
@@ -59,11 +59,15 @@ public class StudentController {
 		return studentService.getByName(name);
 	}
 	@GetMapping("/email/{email}/year/{year}")
-	public Student getByEmailAndYear(String email,String year) {
+	public Student getByEmailAndYear(@PathVariable String email,@PathVariable String year) {
 		return studentService.getByEmailAndYear(email, year);
 	}
 	@GetMapping("/course/{course}")
-    public Student getByCourse(String course) {
+    public Student getByCourse(@PathVariable String course) {
 		return studentService.getByCourse(course);
+	}
+	@GetMapping("/year/{year}")
+	public List<Student> getByYear(@PathVariable String year) {
+		return studentService.getByYear(year);
 	}
 }

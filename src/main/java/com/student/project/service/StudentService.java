@@ -15,8 +15,8 @@ public class StudentService {
 	private StudentRepository repo;
 	
 	//postmapping
-	public Student save(Student student) {
-		return repo.save(student);
+	public List<Student> saveallstudnets(List<Student> student) {
+		return repo.saveAll(student);
 	}
 	//getid
 	public Student getById(Long id) {
@@ -78,6 +78,8 @@ public class StudentService {
 		return repo.findByCourse(Course);
 	}
 
-	
+	public List<Student> getByYear(String year) {
+		return repo.findByYear(year);
+	}
 
 }
