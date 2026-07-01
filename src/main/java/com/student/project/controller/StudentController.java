@@ -38,38 +38,47 @@ public class StudentController {
 	public List<Student> getAll(){
 		return studentService.getAll();
 	}
+	//Update
 	@PutMapping("/{id}")
 	public Student updateStudent(@PathVariable Long id,@RequestBody Student student) {
 		return studentService.update(id, student);
 	}
+	//PartialUpdate
 	@PatchMapping("/{id}")
 	public Student patchUpdate(@PathVariable Long id,@RequestBody Student student) {
 		return studentService.patchUpdate(id, student);
 	}
+	//Delete
 	@DeleteMapping("/{id}")
 	public void deleteById(@PathVariable Long id) {
 		studentService.deleteById(id);
 	}
+	//Get By Name
 	@GetMapping("/name/{name}")
 	public Student findByName(@PathVariable String name) {
 		return studentService.getByName(name);
 	}
+	//Get By Email
 	@GetMapping("/email/{email}")
 	public Student getByName(String name) {
 		return studentService.getByName(name);
 	}
+	//Get By Email and Year
 	@GetMapping("/email/{email}/year/{year}")
 	public Student getByEmailAndYear(@PathVariable String email,@PathVariable String year) {
 		return studentService.getByEmailAndYear(email, year);
 	}
+	//Get By Course
 	@GetMapping("/course/{course}")
     public Student getByCourse(@PathVariable String course) {
 		return studentService.getByCourse(course);
 	}
+	//Get By Year
 	@GetMapping("/year/{year}")
 	public List<Student> getByYear(@PathVariable String year) {
 		return studentService.getByYear(year);
 	}
+	//Get By Name and Email
 	@GetMapping("/name/{name}/email/{email}")
 	public Student getByNameAndEmail(@PathVariable String name,@PathVariable String email) {
 		return studentService.getByNameAndEmail(name, email);
