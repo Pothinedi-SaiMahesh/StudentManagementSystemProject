@@ -86,4 +86,8 @@ public class StudentService {
     public Student getByNameAndEmail(String name,String email) {
 		return repo.findByNameAndEmail(name, email);
 	}
+    //find by student by course and year
+    public List<Student> getByCourseAndYear(String course,String year) {
+    			return repo.findByCourseAndYear(course, year);
+    }
 }

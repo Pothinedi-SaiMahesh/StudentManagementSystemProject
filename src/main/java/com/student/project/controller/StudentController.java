@@ -83,4 +83,13 @@ public class StudentController {
 	public Student getByNameAndEmail(@PathVariable String name,@PathVariable String email) {
 		return studentService.getByNameAndEmail(name, email);
 	}
+	//find by course and year
+	@GetMapping("/course/{course}/year/{year}")
+	public List<Student> getByCourseAndYear(@PathVariable String course,@PathVariable String year) {
+		
+		System.out.println(course);
+		System.out.println(year);
+		
+		return studentService.getByCourseAndYear(course, year);
+	}
 }
